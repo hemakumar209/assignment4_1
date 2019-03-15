@@ -1,0 +1,50 @@
+1. Histogram for all variables in a dataset mtcars. Write a program to create histograms for all columns.
+     Ans:
+       >df<-mtcars
+
+      >Attaching package: ‘psych’
+
+
+       >multi.hist(df,nrow=3,ncol=4)
+
+
+
+2. Check the probability distribution of all variables in mtcars  
+   Ans:
+       >df<-mtcars
+
+       >table(df$mpg)
+       >table(df$mpg)/nrow(df)
+         #or
+       >prop.table(table(df$mpg))
+
+       >table(df$cyl)
+       >table(df$cyl)/nrow(df)
+         #or
+       >prop.table(table(df$cyl))
+
+       >prop.table(table(df$disp))
+
+       >prop.table(table(df$hp))
+
+       >prop.table(table(df$drat))
+
+       >prop.table(table(df$wt))
+
+       >prop.table(table(df$qsec))
+
+       >prop.table(table(df$vs))
+
+       >prop.table(table(df$am))
+
+       >prop.table(table(df$gear))
+
+       >prop.table(table(df$carb))
+
+
+3. Write a program to create boxplot for all variables.
+    Ans:
+      >df<-mtcars
+      >library(ggplot2)
+      >ggplot(stack(df), aes(x = ind, y = values)) + geom_boxplot()
+
